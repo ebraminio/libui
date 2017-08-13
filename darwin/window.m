@@ -414,3 +414,18 @@ uiWindow *windowFromNSWindow(NSWindow *w)
 		return NULL;
 	return [windowDelegate lookupWindow:w];
 }
+
+void uiWindowMoveCenter(uiWindow *w)
+{
+	[w->window center];
+}
+
+void uiWindowOnTop(uiWindow *w)
+{
+	[NSApp activateIgnoringOtherApps:YES];
+}
+
+void uiWindowStayOnTop(uiWindow *w)
+{
+	[w->window setLevel:NSFloatingWindowLevel];
+}
